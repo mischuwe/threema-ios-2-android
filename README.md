@@ -31,7 +31,8 @@ installed on.
 Use a tool like [iBackup Viewer](https://www.imactools.com/iphonebackupviewer/)
 to extract the required files. This tool is free for unencrypted backups.  
 You find them in the following "directory": **AppDomainGroup-group.ch.threema** and
-from the you need the `ThreemaData.sqlite` file and the `.ThreemaData_SUPPORT`
+from there you need the `ThreemaData.sqlite` file (plus `ThreemaData.sqlite-wal`
+and `-shm` if present – they contain the newest messages) and the `.ThreemaData_SUPPORT`
 directory.  
 Save both files somewhere on your disk and use the path to the sqlite file as first
 argument for the python script.
