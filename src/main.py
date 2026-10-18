@@ -637,7 +637,7 @@ class Exporter:
                     choices = [r[0] for r in self.db.conn.execute(
                         'SELECT "%s" FROM ZBALLOTCHOICE WHERE "%s"=? ORDER BY %s' % (
                             ncol, bcol, '"%s"' % ocol if ocol else 'Z_PK'), (ballot_pk,)) if r[0]]
-        text = '📊 Umfrage: %s' % (title or '?')
+        text = '📊 Poll: %s' % (title or '?')
         if choices:
             text += '\n' + '\n'.join('• ' + c for c in choices)
         self.stat('-> polls (as text)')

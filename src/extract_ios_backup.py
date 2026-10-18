@@ -12,7 +12,7 @@ import sys
 from iphone_backup_decrypt import EncryptedBackup
 
 b, out = sys.argv[1], sys.argv[2]
-backup = EncryptedBackup(backup_directory=b, passphrase=getpass.getpass('iPhone-Backup-Passwort: '))
+backup = EncryptedBackup(backup_directory=b, passphrase=getpass.getpass('iOS backup password: '))
 tmp = out + '_raw'
 backup.extract_files(relative_paths_like='%', domain_like='AppDomainGroup-group.ch.threema',
                      output_folder=tmp, preserve_folders=True)
@@ -31,4 +31,4 @@ for root, dirs, files in os.walk(tmp):
         shutil.copyfile(src, dst)
         n += 1
 shutil.rmtree(tmp)
-print(n, 'Dateien kopiert')
+print(n, 'files copied')

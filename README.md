@@ -37,6 +37,16 @@ directory.
 Save both files somewhere on your disk and use the path to the sqlite file as first
 argument for the python script.
 
+### Encrypted iOS backups
+If the backup is encrypted (e.g. enforced by MDM), extract the Threema files with
+`src/extract_ios_backup.py` (needs `pip install iphone_backup_decrypt`):
+
+```
+python3 src/extract_ios_backup.py <backup-dir>/<UDID> ./threema-ios
+```
+
+This works with backups created by iTunes/Finder or `idevicebackup2` (libimobiledevice, Linux).
+
 ### Run the Python Script
 Keep `ThreemaData.sqlite` and `.ThreemaData_SUPPORT` in the same directory (the
 media files are in `.ThreemaData_SUPPORT/_EXTERNAL_DATA`; otherwise pass
